@@ -21,7 +21,7 @@ import {
 } from "variables/charts";
 
 export default function TotalSpent(props) {
-  const { ...rest } = props;
+  const {title, ...rest } = props;
 
   // Chakra Color Mode
 
@@ -54,12 +54,12 @@ export default function TotalSpent(props) {
             fontWeight='500'
             color={textColorSecondary}
             borderRadius='7px'>
-            <Icon
+            {/* <Icon
               as={MdOutlineCalendarToday}
               color={textColorSecondary}
               me='4px'
-            />
-            This month
+            /> */}
+            {title}
           </Button>
           <Button
             ms='auto'

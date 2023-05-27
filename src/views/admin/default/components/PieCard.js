@@ -8,7 +8,7 @@ import { VSeparator } from "components/separator/Separator";
 import React from "react";
 
 export default function Conversion(props) {
-  const { ...rest } = props;
+  const {title, ...rest } = props;
 
   // Chakra Color Mode
   const textColor = useColorModeValue("secondaryGray.900", "white");
@@ -26,7 +26,7 @@ export default function Conversion(props) {
         w='100%'
         mb='8px'>
         <Text color={textColor} fontSize='md' fontWeight='600' mt='4px'>
-          Your Pie Chart
+          {title}
         </Text>
         <Select
           fontSize='sm'

@@ -22,66 +22,107 @@
 
 // Chakra imports
 import {
-  Avatar,
+  // Avatar,
   Box,
-  Flex,
-  FormLabel,
+  // Flex,
+  // FormLabel,
   Icon,
-  Select,
+  // Select,
   SimpleGrid,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Assets
-import Usa from "assets/img/dashboards/usa.png";
+// import Usa from "assets/img/dashboards/usa.png";
 // Custom components
-import MiniCalendar from "components/calendar/MiniCalendar";
+// import MiniCalendar from "components/calendar/MiniCalendar";
 import MiniStatistics from "components/card/MiniStatistics";
 import IconBox from "components/icons/IconBox";
 import React from "react";
 import {
-  MdAddTask,
+  // MdAddTask,
   MdAttachMoney,
   MdBarChart,
-  MdFileCopy,
+  MdShoppingCart,
+  MdLockPerson,
+  MdOutlinePerson,
+  MdOutlinePersonRemove,
+  MdOutlinePersonAdd,
+  MdOutlineSummarize,
+  MdOutlinePending,
+  // MdFileCopy,
 } from "react-icons/md";
-import CheckTable from "views/admin/default/components/CheckTable";
-import ComplexTable from "views/admin/default/components/ComplexTable";
-import DailyTraffic from "views/admin/default/components/DailyTraffic";
+// import CheckTable from "views/admin/default/components/CheckTable";
+// import ComplexTable from "views/admin/default/components/ComplexTable";
+// import DailyTraffic from "views/admin/default/components/DailyTraffic";
 import PieCard from "views/admin/default/components/PieCard";
-import Tasks from "views/admin/default/components/Tasks";
+// import Tasks from "views/admin/default/components/Tasks";
 import TotalSpent from "views/admin/default/components/TotalSpent";
-import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
+// import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
 import {
-  columnsDataCheck,
-  columnsDataComplex,
+  // columnsDataCheck,
+  // columnsDataComplex,
 } from "views/admin/default/variables/columnsData";
-import tableDataCheck from "views/admin/default/variables/tableDataCheck.json";
-import tableDataComplex from "views/admin/default/variables/tableDataComplex.json";
+// import tableDataCheck from "views/admin/default/variables/tableDataCheck.json";
+// import tableDataComplex from "views/admin/default/variables/tableDataComplex.json";
 
 export default function UserReports() {
   // Chakra Color Mode
   const brandColor = useColorModeValue("brand.500", "white");
   const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
+
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3, "2xl": 6 }}
         gap='20px'
         mb='20px'>
+
         <MiniStatistics
           startContent={
             <IconBox
-              w='56px'
-              h='56px'
+              w='100px'
+              h='100px'
               bg={boxBg}
               icon={
-                <Icon w='32px' h='32px' as={MdBarChart} color={brandColor} />
+                <Icon w='50px' h='50px' as={MdBarChart} color={brandColor} />
               }
             />
           }
-          name='Earnings'
+          name='Ingresos Hoy'
           value='$350.4'
         />
+
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='100px'
+              h='100px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdShoppingCart} color={brandColor} />
+              }
+            />
+          }
+          name='Gastos Hoy'
+          value='$642.39'
+        />
+
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='100px'
+              h='100px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdOutlineSummarize} color={brandColor} />
+              }
+            />
+          }
+          name='Tickets Activos'
+          value='30'
+        />
+        
+
         <MiniStatistics
           startContent={
             <IconBox
@@ -89,15 +130,98 @@ export default function UserReports() {
               h='56px'
               bg={boxBg}
               icon={
-                <Icon w='32px' h='32px' as={MdAttachMoney} color={brandColor} />
+                <Icon w='32px' h='32px' as={MdOutlinePersonAdd} color={brandColor} />
               }
             />
           }
-          name='Spend this month'
-          value='$642.39'
+          name='Clientes Pendientes Por Activar'
+          value='30'
         />
-        <MiniStatistics growth='+23%' name='Sales' value='$574.34' />
+        
+
         <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdLockPerson} color={brandColor} />
+              }
+            />
+          }
+          name='Clientes Suspendidos'
+          value='30'
+        />
+        
+
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdOutlinePersonRemove} color={brandColor} />
+              }
+            />
+          }
+          name='Clientes Pendientes Para Suspender'
+          value='30'
+        />
+        
+        
+
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdOutlinePending} color={brandColor} />
+              }
+            />
+          }
+          name='Clientes Activos'
+          value='30'
+        />
+        
+
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdOutlinePending} color={brandColor} />
+              }
+            />
+          }
+          name='Clientes Pendientes Por Revisión'
+          value='30'
+        />
+        
+
+        <MiniStatistics
+          startContent={
+            <IconBox
+              w='56px'
+              h='56px'
+              bg={boxBg}
+              icon={
+                <Icon w='32px' h='32px' as={MdOutlinePerson} color={brandColor} />
+              }
+            />
+          }
+          name='Clientes Nuevos Hoy'
+          value='30'
+        />
+        
+        {/* <MiniStatistics growth='+23%' name='Sales' value='$574.34' /> */}
+
+        {/* <MiniStatistics
           endContent={
             <Flex me='-16px' mt='10px'>
               <FormLabel htmlFor='balance'>
@@ -117,8 +241,9 @@ export default function UserReports() {
           }
           name='Your balance'
           value='$1,000'
-        />
-        <MiniStatistics
+        /> */}
+
+        {/* <MiniStatistics
           startContent={
             <IconBox
               w='56px'
@@ -129,8 +254,9 @@ export default function UserReports() {
           }
           name='New Tasks'
           value='154'
-        />
-        <MiniStatistics
+        /> */}
+
+        {/* <MiniStatistics
           startContent={
             <IconBox
               w='56px'
@@ -143,21 +269,37 @@ export default function UserReports() {
           }
           name='Total Projects'
           value='2935'
-        />
+        /> */}
+        
       </SimpleGrid>
 
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
-        <TotalSpent />
-        <WeeklyRevenue />
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap='20px' mb='20px'>
+
+        <PieCard title='Ingresos Vs Gastos'/>
+        <TotalSpent title='Ingresos Por Mes'/>
+        <TotalSpent title='Gastos Por Mes'/>
+        {/* <WeeklyRevenue /> */}
+
       </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
+
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap='20px' mb='20px'>
+
+        <PieCard title='Dinero Recolectado Vs Dinero Pendiente'/>
+        <TotalSpent title='Ingresos De Hoy Por Horas'/>
+        <TotalSpent title='Gastos De Hoy Por Horas'/>
+        {/* <WeeklyRevenue /> */}
+
+      </SimpleGrid>
+
+      {/* <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
         <CheckTable columnsData={columnsDataCheck} tableData={tableDataCheck} />
         <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
           <DailyTraffic />
           <PieCard />
         </SimpleGrid>
-      </SimpleGrid>
-      <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
+      </SimpleGrid> */}
+
+      {/* <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap='20px' mb='20px'>
         <ComplexTable
           columnsData={columnsDataComplex}
           tableData={tableDataComplex}
@@ -166,7 +308,9 @@ export default function UserReports() {
           <Tasks />
           <MiniCalendar h='100%' minW='100%' selectRange={false} />
         </SimpleGrid>
-      </SimpleGrid>
+
+      </SimpleGrid> */}
+
     </Box>
   );
 }
